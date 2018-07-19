@@ -32,20 +32,7 @@ void FileTitle::Rename()
 
 void FileTitle::AdjusParentsSize()
 {
-//     FileWidget* parentWidget = static_cast<FileWidget*>(parent());
-//     if( nullptr != parentWidget )
-//     {
-//         int lineTextHeight = 0;
-//         QFontMetrics fontMetrics(font());
-//         QString fileName = toPlainText();
-//         int fileNameSize = fontMetrics.width( fileName );
-//         size_t countTextLines = fileNameSize/width();
-//         if( countTextLines > 2 )
-//         {
-//             lineTextHeight = fontMetrics.height() * (countTextLines + 2);
-//         }
-//         parentWidget->SetTextLineHeight(lineTextHeight);
-//     }
+    //TODO: implementation
 }
 
 

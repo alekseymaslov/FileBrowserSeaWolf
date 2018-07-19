@@ -32,12 +32,20 @@ class FileWidget : public QFrame
 {
     Q_OBJECT;
 
+public:
+    explicit FileWidget(const QFileInfo& inFileInfo, const QWidget* mainWidget,
+                        size_t inId, QWidget* parent = nullptr,
+                        Qt::WindowFlags f = Qt::WindowFlags(),
+                        QString inFileName = QString("") );
+
+    virtual ~FileWidget();
+
+private:
     QString fileName = "";
     size_t id;
     QLabel* labelImage = nullptr;
     QTextEdit* labeltitle = nullptr;
     const QFileInfo& fileInfo;
-    //FileInputHandler* inputhandler = nullptr;
     SystemCalls* systemcalls       = nullptr;
     const QWidget* mainWidget      = nullptr;
     QTextEdit* qTextEdit = nullptr;
@@ -51,18 +59,10 @@ class FileWidget : public QFrame
     bool selected = false;
     bool clickedFlag = false;
     bool dragActive = false;
+    int globalXCorrection = 80, globalYCorrection = 100;
+
 public:
-    explicit FileWidget(const QFileInfo& inFileInfo, const QWidget* mainWidget,
-                        size_t inId, QWidget* parent = nullptr,
-                        Qt::WindowFlags f = Qt::WindowFlags(),
-                        QString inFileName = QString("") );
-
-
-
-    virtual ~FileWidget();
-
     void SetParts( QLabel* labelImage, QTextEdit* labeltitle );
-    //void SetInputHandler( FileInputHandler* handler );
     void SetFileSystemCalls( SystemCalls* systemcalls );
 
     void SetSelection(bool ignoreOthers = false);
@@ -84,7 +84,6 @@ public:
 
     void SetTextLineHeight( int inTextLineHeight );
 
-
     QTextEdit* GetTitle();
 
     void UpdateForm( bool forceUpdate = false );
@@ -95,19 +94,9 @@ public:
 signals:
     void clicked();
 private slots:
-//     void handleDrag(QWidget*);
-
-//     void s(QDragMoveEvent *event) override;
 
 protected:
 
-//     void mousePressEvent(QMouseEvent* ) override;
-//     void dragEnterEvent(QDragEnterEvent*) override;
-//     void dragMoveEvent(QDragMoveEvent*) override;
-//     void dragLeaveEvent(QDragLeaveEvent*) override;
-
-//     void mousePressEvent(QMouseEvent* event);
-//     void mouseDoubleClickEvent(QMouseEvent* event);
 private:
 };
 

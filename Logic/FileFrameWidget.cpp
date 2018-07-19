@@ -78,7 +78,6 @@ void FileFrameWidget::mouseMoveEvent(QMouseEvent* event)
     int y = qMin(selectionStart.y(), event->pos().y());
     int w = abs(selectionStart.x() - event->pos().x());
     int h = abs(selectionStart.y() - event->pos().y());
-    std::cout<<"w:"<<w<<"h:"<<h<<"x:"<<x<<"y:"<<y<<std::endl;
 
     selectionFrame->setGeometry(x, y, w, h);
 

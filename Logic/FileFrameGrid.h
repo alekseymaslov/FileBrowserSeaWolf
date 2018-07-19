@@ -28,6 +28,7 @@ class FileFrameGrid : public QGridLayout
 {
     SystemCalls*    systemcalls    = nullptr;
     const QWidget*  mainFormWidget = nullptr;
+    int globalXCorrection = 80, globalYCorrection = 100;
 public:
     explicit FileFrameGrid( const QWidget* inMainForm, QWidget* parent = nullptr ) :
                             mainFormWidget(inMainForm), QGridLayout(parent){};

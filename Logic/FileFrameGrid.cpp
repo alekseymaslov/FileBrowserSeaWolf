@@ -37,7 +37,7 @@ void FileFrameGrid::mousePressEvent(QMouseEvent* event)
         contextmenu.InitMenu(mainForm);
         //TODO: correction mouse center by icons size
         contextmenu.setGeometry( QRect(QPoint(event->globalX(), event->globalY()),
-                                 QPoint(event->globalX() /*- 80*/, event->globalY() /*- 100*/)) );
+                                 QPoint(event->globalX() - globalXCorrection, event->globalY() - globalYCorrection)) );
         contextmenu.exec();
     }
     else if(!QApplication::keyboardModifiers().testFlag(Qt::ControlModifier))

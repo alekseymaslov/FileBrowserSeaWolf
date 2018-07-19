@@ -201,7 +201,7 @@ void FileWidget::contextMenuButtonEvent(QContextMenuEvent* event)
     ContextMenu contextmenu(ContextMenu::eFileMenu, nullptr, systemcalls);
     contextmenu.InitMenu( labeltitle );
     contextmenu.setGeometry( QRect(QPoint(event->globalX(), event->globalY()),//TODO: check this
-                             QPoint(event->globalX() - 80, event->globalY() - 100)) );
+                             QPoint(event->globalX() - globalXCorrection, event->globalY() - globalYCorrection)) );
     contextmenu.exec();
 }
 
